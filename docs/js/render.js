@@ -502,7 +502,18 @@
   }
 
   function renderRulesHint() {
-    // removed per request — no how-to-play box on the main screen
+    var h = q('rules-hint');
+    h.innerHTML =
+      '<div class="rules-box">' +
+        '<div class="rules-sec">2-4 لاعبين • كل واحد يبدأ بـ <b>7 كروت</b> • كل كارت ليه 3 صفات: هجوم / ذكاء / دفاع</div>' +
+        '<div class="rules-sec"><b style="color:#ffd700">مسار الراوند:</b> قبل (لوكي) ← اختيار النوع ← اللعب السري ← الكشف ← بعد (ريفرس فلاش)</div>' +
+        '<div class="rules-sec"><b style="color:#ffd700">لوكي</b>: قبل الراوند، تسرق كارت عشوائي من خصم تختاره. لو كان آخر كارت عنده → يخرج فوراً</div>' +
+        '<div class="rules-sec"><b style="color:#ffd700">نوع الراوند</b> (هجوم/ذكاء/دفاع) بيتغير كل راوند، والأعلى مجموع يكسب <b>+1 نقطة</b></div>' +
+        '<div class="rules-sec"><b style="color:#ffd700">كروت +</b> (100 إلى 500) بتتلعب مع كارت شخصية وبتضيف قيمتها للمجموع</div>' +
+        '<div class="rules-sec"><b style="color:#ffd700">ريفرس فلاش</b>: بعد الراوند، لو خسرت ترجّع كارت من راوندك وتكشّر شخصية من يدك بداله</div>' +
+        '<div class="rules-sec"><b style="color:#ffd700">الفوز:</b> أول واحد يوصل 7 نقاط • لو فاضل واحد بس يكسب • لو الكل خرج → الأعلى نقاط</div>' +
+        '<div class="rules-sec">⚠ اللي يخلّص كروته قبل ما يكسب يدخل — يخرج من اللعبة</div>' +
+      '</div>';
   }
 
   function setStatus(msg, isError) {
@@ -765,9 +776,9 @@
     var frozenHtml = card.frozen ? '<div class="card-frozen-badge">متجمد!</div>' : '';
     var statsHtml = (!card.special && !card.bonus)
       ? '<div class="card-stats">' +
-          '<span class="st st-att"><small>هجوم</small><b>' + (card.attack || 0) + '</b></span>' +
-          '<span class="st st-int"><small>ذكاء</small><b>' + (card.intelligence || 0) + '</b></span>' +
-          '<span class="st st-def"><small>دفاع</small><b>' + (card.defense || 0) + '</b></span>' +
+          '<span class="st st-att"><svg viewBox="0 0 24 24" class="st-icon">' + ICONS.attack + '</svg><b>' + (card.attack || 0) + '</b></span>' +
+          '<span class="st st-int"><svg viewBox="0 0 24 24" class="st-icon">' + ICONS.intelligence + '</svg><b>' + (card.intelligence || 0) + '</b></span>' +
+          '<span class="st st-def"><svg viewBox="0 0 24 24" class="st-icon">' + ICONS.defense + '</svg><b>' + (card.defense || 0) + '</b></span>' +
         '</div>'
       : '';
     if (card.frozen) el.classList.add('frozen');
