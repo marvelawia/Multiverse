@@ -68,8 +68,8 @@ body {
   opacity: .8;
 }
 
-#bg-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; opacity: .5; }
-#bg-3d { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+#bg-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: .5; }
+#bg-3d { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
 
 /* ===== Screens ===== */
 .screen { position: fixed; inset: 0; z-index: 10; display: none; align-items: center; justify-content: center; overflow: auto; }
@@ -193,7 +193,7 @@ input:focus, select:focus { background: #0d1330; box-shadow: 0 0 0 3px rgba(255,
 .tb-actions .btn-icon { width: 40px; height: 40px; }
 .tb-decks { font-size: 13px; color: var(--text-dim); }
 
-#table { position: fixed; inset: 58px 0 0; z-index: 5; }
+#table { position: fixed; inset: 58px 0 0; z-index: 5; perspective: 1700px; }
 
 /* ===== Spectator banner ===== */
 #spectate-banner {
@@ -327,7 +327,7 @@ input:focus, select:focus { background: #0d1330; box-shadow: 0 0 0 3px rgba(255,
 
 /* ===== Cards (flat 2D) ===== */
 .card {
-  width: var(--card-w); height: var(--card-h); perspective: 900px;
+  width: var(--card-w); height: var(--card-h); perspective: 900px; transform: rotateY(-6deg);
   margin: 0 -21px; position: relative; cursor: pointer; flex-shrink: 0;
   background: linear-gradient(180deg, var(--bg-3), var(--bg-2));
   border: 2px solid var(--line-strong); border-radius: 14px;
