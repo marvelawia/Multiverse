@@ -899,7 +899,7 @@
   /* ===== phone only: big card preview (tap a hand card to read it) ===== */
   function cardPreviewSize() {
     var h = Math.min(240, Math.round((window.innerHeight || 360) * 0.56));
-    var w = Math.round(h * 0.686);
+    var w = Math.round(h * 0.623);
     return { w: w, h: h };
   }
 
@@ -1565,7 +1565,7 @@
         el.style.opacity = '1';
         el.style.margin = '0';
         var pkW = androidMode() ? '122px' : '150px';
-        var pkH = androidMode() ? '178px' : '210px';
+        var pkH = androidMode() ? '196px' : '241px';
         el.style.width = pkW;
         el.style.height = pkH;
         row.appendChild(el);
