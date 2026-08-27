@@ -21,7 +21,7 @@
   --greenSoft: rgba(45, 212, 167, 0.16);
   --purple: #b06bff;
   --card-w: 202px;
-  --card-h: 294px;
+  --card-h: 324px;
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
   --radius: 16px;
 }
@@ -751,6 +751,6 @@ input:focus, select:focus { background: #0d1330; box-shadow: 0 0 0 3px rgba(255,
 .hidden { display: none !important; }
 
 @media (max-width: 1100px) {
-  :root { --card-w: 166px; --card-h: 242px; }
+  :root { --card-w: 166px; --card-h: 266px; }
   .card { margin: 0 -14px; }
 }
