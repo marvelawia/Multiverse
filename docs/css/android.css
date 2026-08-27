@@ -13,7 +13,7 @@
 
 html.is-android {
   --card-w: 102px;
-  --card-h: 150px;
+  --card-h: 164px;
   --radius: 12px;
   --shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
 }
@@ -184,7 +184,7 @@ html.is-android .swap-box, html.is-android .phase-box { padding: 16px 20px; gap:
 html.is-android .swap-box h3 { font-size: 20px; }
 html.is-android .swap-box .sub, html.is-android .phase-box .sub { font-size: 12.5px; }
 html.is-android .swap-hand { gap: 8px; }
-html.is-android .swap-hand .card { --card-w: 116px; --card-h: 170px; margin: 0 -6px; }
+html.is-android .swap-hand .card { --card-w: 116px; --card-h: 186px; margin: 0 -6px; }
 html.is-android .phase-box h2 { font-size: 22px; }
 html.is-android .phase-box h3 { font-size: 17px; }
 html.is-android .phase-actions .btn { min-height: 44px; }
