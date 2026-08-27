@@ -765,7 +765,6 @@
     el.dataset.type = card.specialty || 'attack';
     el.dataset.cat = card.special ? 'special' : (card.bonus ? 'bonus' : 'char');
     el.style.opacity = '0';
-    var rarityCls = 'rarity-' + (card.rarity || 'common');
     var imgHtml = card.img
       ? '<img class="card-img" src="' + card.img + '" alt="' + esc(card.name) + '" onerror="this.style.display=\'none\'">'
       : '';
@@ -774,13 +773,11 @@
     var specialHtml = card.special ? '<div class="card-special-badge">' + (SPECIAL_NAMES[card.special] || card.special) + '</div>' : '';
     var forcedHtml = card.forced ? '<div class="card-forced-badge">مجبور!</div>' : '';
     var frozenHtml = card.frozen ? '<div class="card-frozen-badge">متجمد!</div>' : '';
-    var statsHtml = (!card.special && !card.bonus)
-      ? '<div class="card-stats">' +
-          '<span class="st st-att"><svg viewBox="0 0 24 24" class="st-icon">' + ICONS.attack + '</svg><b>' + (card.attack || 0) + '</b></span>' +
-          '<span class="st st-int"><svg viewBox="0 0 24 24" class="st-icon">' + ICONS.intelligence + '</svg><b>' + (card.intelligence || 0) + '</b></span>' +
-          '<span class="st st-def"><svg viewBox="0 0 24 24" class="st-icon">' + ICONS.defense + '</svg><b>' + (card.defense || 0) + '</b></span>' +
-        '</div>'
-      : '';
+    // character cards show the artwork as-is (stats & rarity are baked into the image);
+    // only special/bonus cards keep a small name label so players can tell them apart
+    var infoHtml = (!card.special && !card.bonus)
+      ? ''
+      : '<div class="card-info"><div class="card-name">' + esc(card.name) + '</div></div>';
     if (card.frozen) el.classList.add('frozen');
 
     el.innerHTML =
@@ -788,12 +785,8 @@
         '<div class="face face-front">' +
           imgHtml + fallbackHtml +
           '<div class="card-rarity-glow"></div>' +
-          '<div class="card-rarity-badge ' + rarityCls + '">' + (RARITY_NAMES[card.rarity] || card.rarity) + '</div>' +
           bonusHtml + specialHtml + forcedHtml + frozenHtml +
-          '<div class="card-info">' +
-            statsHtml +
-            '<div class="card-name">' + esc(card.name) + '</div>' +
-          '</div>' +
+          infoHtml +
         '</div>' +
         '<div class="face face-back"><div class="emblem"><div class="ring"></div></div></div>' +
       '</div>';
