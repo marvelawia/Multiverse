@@ -422,23 +422,13 @@ input:focus, select:focus { background: #0d1330; box-shadow: 0 0 0 3px rgba(255,
   50% { transform: scale(1.08); box-shadow: 0 0 18px rgba(80, 200, 255, 0.95); }
 }
 
-.card-info { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 34px 10px 10px; background: linear-gradient(to top, rgba(7, 9, 15, 0.9) 42%, rgba(7, 9, 15, 0.35) 78%, transparent); }
-.card-stats { display: flex; gap: 5px; margin-bottom: 8px; }
-.card-stats .st {
-  flex: 1; text-align: center; border-radius: 8px; padding: 3px 0 4px;
-  border: 1px solid var(--line-strong); background: rgba(7, 9, 15, 0.5);
-}
-.card-stats .st small { display: block; font-size: 9px; font-weight: 800; opacity: .85; line-height: 1; color: var(--text-dim); }
-.card-stats .st b { display: block; font-size: 16px; font-weight: 900; line-height: 1.25; color: var(--text); }
-.st-att { border-color: rgba(255, 71, 87, 0.4); } .st-att b { color: var(--red2); }
-.st-int { border-color: rgba(76, 201, 240, 0.4); } .st-int b { color: var(--blue); }
-.st-def { border-color: rgba(45, 212, 167, 0.4); } .st-def b { color: var(--green); }
+.card-info { position: absolute; bottom: 6px; left: 6px; right: 6px; z-index: 2; }
 .card-name {
-  background: linear-gradient(180deg, var(--bg-1), #0d1330);
+  background: rgba(7, 9, 15, 0.82);
   border: 1px solid var(--line-strong); border-radius: 8px;
-  font-size: 14px; font-weight: 900; color: #fff; text-align: center;
+  font-size: 13px; font-weight: 900; color: #fff; text-align: center;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  padding: 4px 6px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  padding: 3px 6px; backdrop-filter: blur(2px);
 }
 
 .card.sel { transform: translateY(-30px) scale(1.04); z-index: 40; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.65), 0 18px 44px rgba(0, 0, 0, 0.55), 0 0 26px rgba(255, 215, 0, 0.25); }
