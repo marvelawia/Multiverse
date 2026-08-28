@@ -769,24 +769,12 @@
       ? '<img class="card-img" src="' + card.img + '" alt="' + esc(card.name) + '" onerror="this.style.display=\'none\'">'
       : '';
     var fallbackHtml = '<div class="card-img-fallback" style="display:none">' + esc((card.name || '؟').substring(0, 2)) + '</div>';
-    var bonusHtml = card.bonus ? '<div class="card-bonus">+' + card.bonus + '</div>' : '';
-    var specialHtml = card.special ? '<div class="card-special-badge">' + (SPECIAL_NAMES[card.special] || card.special) + '</div>' : '';
-    var forcedHtml = card.forced ? '<div class="card-forced-badge">مجبور!</div>' : '';
-    var frozenHtml = card.frozen ? '<div class="card-frozen-badge">متجمد!</div>' : '';
-    // character cards show the artwork as-is (stats & rarity are baked into the image);
-    // only special/bonus cards keep a small name label so players can tell them apart
-    var infoHtml = (!card.special && !card.bonus)
-      ? ''
-      : '<div class="card-info"><div class="card-name">' + esc(card.name) + '</div></div>';
     if (card.frozen) el.classList.add('frozen');
 
     el.innerHTML =
       '<div class="inner">' +
         '<div class="face face-front">' +
           imgHtml + fallbackHtml +
-          '<div class="card-rarity-glow"></div>' +
-          bonusHtml + specialHtml + forcedHtml + frozenHtml +
-          infoHtml +
         '</div>' +
         '<div class="face face-back"><div class="emblem"><div class="ring"></div></div></div>' +
       '</div>';
