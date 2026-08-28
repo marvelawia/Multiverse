@@ -768,13 +768,23 @@
     var imgHtml = card.img
       ? '<img class="card-img" src="' + card.img + '" alt="' + esc(card.name) + '" onerror="this.style.display=\'none\'">'
       : '';
+    var num = function (v) { return v !== undefined && v !== null ? v : '—'; };
+    var infoHtml =
+      '<div class="card-info">' +
+        '<div class="card-name">' + esc(card.name) + '</div>' +
+        '<div class="card-stats">' +
+          '<span class="sp sp-atk"><i>هجوم</i><b>' + num(card.attack) + '</b></span>' +
+          '<span class="sp sp-int"><i>ذكاء</i><b>' + num(card.intelligence) + '</b></span>' +
+          '<span class="sp sp-def"><i>دفاع</i><b>' + num(card.defense) + '</b></span>' +
+        '</div>' +
+      '</div>';
     var fallbackHtml = '<div class="card-img-fallback" style="display:none">' + esc((card.name || '؟').substring(0, 2)) + '</div>';
     if (card.frozen) el.classList.add('frozen');
 
     el.innerHTML =
       '<div class="inner">' +
         '<div class="face face-front">' +
-          imgHtml + fallbackHtml +
+          imgHtml + fallbackHtml + infoHtml +
         '</div>' +
         '<div class="face face-back"><div class="emblem"><div class="ring"></div></div></div>' +
       '</div>';
