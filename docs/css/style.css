@@ -355,6 +355,31 @@ input:focus, select:focus { background: #0d1330; box-shadow: 0 0 0 3px rgba(255,
 }
 .card.frozen .card-img { filter: brightness(.75) saturate(.6); }
 
+.card-info {
+  position: absolute; left: 6px; right: 6px; bottom: 6px;
+  background: rgba(10, 12, 26, .88);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px; padding: 5px 7px 6px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.card-info .card-name {
+  font-size: 13px; font-weight: 900; color: var(--gold);
+  text-align: center; letter-spacing: .2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  text-shadow: 0 0 10px rgba(255, 200, 0, .3);
+}
+.card-info .card-stats { display: flex; gap: 5px; margin-top: 5px; }
+.card-info .sp {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  line-height: 1.1; border-radius: 7px; padding: 2px 3px 3px;
+}
+.card-info .sp i { font-style: normal; font-size: 9px; font-weight: 700; opacity: .8; }
+.card-info .sp b { font-size: 14px; font-weight: 900; line-height: 1.2; }
+.card-info .sp-atk { background: rgba(255, 71, 87, .16); color: #ff8296; border: 1px solid rgba(255, 71, 87, .35); }
+.card-info .sp-int { background: rgba(76, 201, 240, .16); color: #7cd9ff; border: 1px solid rgba(76, 201, 240, .35); }
+.card-info .sp-def { background: rgba(45, 212, 167, .16); color: #5ce0bd; border: 1px solid rgba(45, 212, 167, .35); }
+
 .card.sel { transform: translateY(-30px) scale(1.06); z-index: 40; }
 .card.sel:hover { transform: translateY(-30px) scale(1.1); z-index: 45; }
 .card.disable { cursor: default; filter: grayscale(.7) brightness(.8); opacity: .7; }
